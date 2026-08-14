@@ -63,7 +63,7 @@ const ProductCard = ({ name, price, image, discount }) => {
 
         {/* WhatsApp */}
         <a
-          href="https://wa.me/5551999999999"
+          href="https://wa.me/5551992534247"
           target="_blank"
           rel="noopener noreferrer"
           className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-primary py-3 text-sm font-semibold text-white transition hover:bg-primary-hover"
