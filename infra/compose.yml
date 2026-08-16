@@ -1,0 +1,7 @@
+services:
+  database:
+    image: "postgres:16.14-alpine3.24"
+    env_file:
+      - ../.env.development
+    ports:
+      - "5432:5432"

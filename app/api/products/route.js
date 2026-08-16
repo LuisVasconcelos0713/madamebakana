@@ -7,3 +7,5 @@ const GET = async () => {
     result: res.rows[0].sum,
   });
 };
+
+export { GET }
