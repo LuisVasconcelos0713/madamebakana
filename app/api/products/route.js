@@ -1,11 +1,8 @@
-import database from "../../../infra/database";
+import prisma from "../../../lib/prisma";
 
 const GET = async () => {
-  const res = await database.query("SELECT 1 + 1 as sum");
-  return Response.json({
-    success: true,
-    result: res.rows[0].sum,
-  });
+  const products = await prisma.product.findMany()
+  return Response.json(products)
 };
 
 export { GET }
