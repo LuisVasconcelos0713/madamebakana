@@ -1,5 +1,6 @@
 import Counter from "../components/Counter";
 import ProductCard from "../components/ProductCard";
+import prisma from "../lib/prisma";
 
 const page = async () => {
   const products = await prisma.product.findMany();
