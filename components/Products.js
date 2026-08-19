@@ -1,32 +1,27 @@
-"use client"
+import prisma from "../lib/prisma";
+import ProductCard from "./ProductCardAdmin";
 
-import axios from "axios";
-import { useEffect, useState } from "react";
+const Products = async () => {
+  const products = await prisma.product.findMany({
+    orderBy: { createdAt: "desc" },
+  });
 
-const Products = () => {
-    const [products, setProducts] = useState([])
-    
-    useEffect(() => {
-        const getProducts = async () => {
-            const response = await axios.get("/api/products")
-            setProducts(response.data)
-        }
-
-        getProducts()
-    },[])
-
-    return(
-        <div>
-            {products.map((product) => (
-                <div key={product.id}>
-                    <h1>{product.name}</h1>
-                    <h2>{product.price}</h2>
-                    <h3>{product.discount}</h3>
-                    <h4>{product.image}</h4>
-                </div>
-            ))}
-        </div>
-    )
-}
+  return (
+    <div className="flex justify-center w-full">
+      <div className="flex flex-row flex-wrap gap-15 justify-center mt-30 w-1/2">
+        {products.map((product) => (
+          <ProductCard
+            key={product.id}
+            id={product.id}
+            name={product.name}
+            price={product.price}
+            discount={product.discount}
+            image={product.image}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
 
 export default Products;

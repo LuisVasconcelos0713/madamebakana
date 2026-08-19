@@ -3,7 +3,9 @@
 import { useState } from "react";
 import ProductEditMode from "./ProductEditMode";
 
-const ProductCard = ({ name, price, discount, image, id }) => {
+const ProductCardAdmin = ({ name, price, discount, image, id }) => {
+  const [editMode, setEditMode] = useState(false);
+
   const safePrice = price ?? 0;
   const safeDiscount = discount ?? 0;
   const finalPrice = safePrice - (safePrice * (safeDiscount ?? 0)) / 100;
@@ -17,6 +19,23 @@ const ProductCard = ({ name, price, discount, image, id }) => {
     style: "currency",
     currency: "BRL",
   });
+
+  if (editMode) {
+    return (
+      <div className="w-full max-w-sm rounded-2xl bg-secondary p-4">
+        <ProductEditMode
+          product={{
+            id,
+            name,
+            price: safePrice,
+            discount: safeDiscount,
+            image,
+          }}
+          onCancel={() => setEditMode(false)}
+        />
+      </div>
+    );
+  }
 
   return (
     <article className="group w-full max-w-sm">
@@ -77,9 +96,15 @@ const ProductCard = ({ name, price, discount, image, id }) => {
         >
           Falar com vendedor
         </a>
+        <button
+          onClick={() => setEditMode(true)}
+          className="mt-2 w-full rounded-xl border border-gray-300 py-2 text-xs font-semibold text-text transition hover:bg-gray-100"
+        >
+          Editar Produto
+        </button>
       </div>
     </article>
   );
 };
 
-export default ProductCard;
+export default ProductCardAdmin;
