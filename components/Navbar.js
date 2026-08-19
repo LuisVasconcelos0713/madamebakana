@@ -1,3 +1,5 @@
+import { UserCog } from "lucide-react";
+
 const Navbar = () => {
   return (
     <header className="border-b border-[#E8DED5] bg-background">
@@ -33,9 +35,12 @@ const Navbar = () => {
 
         {/* Ações */}
         <div className="flex items-center gap-3">
-          <button className="rounded-full border border-[#D9CCC2] px-5 py-2 text-sm font-medium text-text transition hover:border-primary hover:text-primary">
-            Carrinho
-          </button>
+          <a
+            href="/admin"
+            className="flex items-center justify-center rounded-full border border-[#D9CCC2] p-2 text-sm font-medium text-text transition hover:border-primary hover:text-primary"
+          >
+            <UserCog size={20} strokeWidth={1.8} />
+          </a>
         </div>
       </nav>
     </header>
