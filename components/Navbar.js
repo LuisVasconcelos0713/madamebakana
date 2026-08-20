@@ -36,7 +36,7 @@ const Navbar = () => {
         {/* Ações */}
         <div className="flex items-center gap-3">
           <a
-            href="/loja"
+            href="/admin"
             className="flex items-center justify-center rounded-full border border-[#D9CCC2] p-2 text-sm font-medium text-text transition hover:border-primary hover:text-primary"
           >
             <UserCog size={20} strokeWidth={1.8} />
