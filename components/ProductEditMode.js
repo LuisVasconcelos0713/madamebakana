@@ -1,4 +1,4 @@
-import { UpdateProduct } from "../actions/UpdateProduct";
+import { UpdateProduct } from "../app/actions/UpdateProduct";
 
 const ProductEditMode = ({ product, onCancel }) => {
   return (

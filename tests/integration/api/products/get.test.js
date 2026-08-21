@@ -6,3 +6,5 @@ test("TEST GET PRODUCTS SHOULD RETURN 200", async () => {
 
   console.log(products);
 });
+
+test("CREATE USER SHOULD RETURN 200", async () => {});

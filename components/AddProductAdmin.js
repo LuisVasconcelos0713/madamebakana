@@ -1,4 +1,4 @@
-import { sendProduct } from "../actions/SendProduct";
+import { sendProduct } from "../app/actions/SendProduct";
 
 const AddProductAdmin = () => {
   return (

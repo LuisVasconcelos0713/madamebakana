@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import ProductEditMode from "./ProductEditMode";
-import { DeleteProduct } from "../actions/DeleteProduct";
+import { DeleteProduct } from "../app/actions/DeleteProduct";
 
 const ProductCardAdmin = ({ name, price, discount, image, id }) => {
   const [editMode, setEditMode] = useState(false);

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { UserCog } from "lucide-react";
 
 const Navbar = () => {
@@ -5,18 +6,18 @@ const Navbar = () => {
     <header className="border-b border-[#E8DED5] bg-background">
       <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
         {/* Logo */}
-        <a href="/" className="text-xl font-bold tracking-tight text-text">
+        <Link href="/" className="text-xl font-bold tracking-tight text-text">
           MADAME <span className="text-primary">BAKANA</span>
-        </a>
+        </Link>
 
         {/* Links */}
         <div className="hidden items-center gap-10 md:flex">
-          <a
+          <Link
             href="/"
             className="text-sm font-medium text-text transition-colors hover:text-primary"
           >
             Início
-          </a>
+          </Link>
 
           <a
             href="/loja"
