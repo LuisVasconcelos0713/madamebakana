@@ -141,7 +141,7 @@ const ProductCardAdmin = ({ name, price, discount, image, id }) => {
               <button
                 type="button"
                 onClick={handleDelete}
-                className="flex-1 rounded-xl bg-red-500 py-3 text-sm font-semibold text-white transition hover:bg-red-600"
+                className="flex-1 rounded-xl py-3 text-sm font-semibold  text-gray-400 transition-colors group-hover:text-red-500"
               >
                 Deletar
               </button>
