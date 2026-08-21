@@ -1,6 +1,6 @@
 import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
-import prisma from "./lib/prisma"; // ajuste o caminho se necessário
+import prisma from "./lib/prisma";
 import bcrypt from "bcrypt";
 import { authConfig } from "./auth.config";
 
@@ -14,6 +14,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       },
       async authorize(credentials) {
         if (!credentials?.email || !credentials?.password) {
+          console.log("[AUTH] faltou email ou senha no form");
           return null;
         }
 
@@ -24,6 +25,10 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         });
 
         if (!user || !user.password) {
+          console.log(
+            "[AUTH] usuário não encontrado no banco:",
+            credentials.email,
+          );
           return null;
         }
 
@@ -33,8 +38,11 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         );
 
         if (!passwordCorrect) {
+          console.log("[AUTH] senha incorreta para:", credentials.email);
           return null;
         }
+
+        console.log("[AUTH] login autorizado com sucesso:", credentials.email);
 
         return {
           id: String(user.id),
