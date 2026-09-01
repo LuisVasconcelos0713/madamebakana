@@ -50,24 +50,30 @@ const ProductCard = ({ name, price, discount, image, id }) => {
           {name}
         </h2>
 
-        {/* Preços */}
-        <div className="mt-2 flex items-end gap-3">
-          <span className="text-2xl font-bold tracking-tight text-primary">
-            {formattedPrice}
-          </span>
+        {/* Preços/Economia */}
+        {safeDiscount > 0 ? (
+          <div>
+            <div className="mt-2 flex items-end gap-3">
+              <span className="text-2xl font-bold tracking-tight text-primary">
+                {formattedPrice}
+              </span>
 
-          {safeDiscount > 0 && (
-            <span className="pb-0.5 text-sm text-muted line-through">
-              {formattedOldPrice}
+              {safeDiscount > 0 && (
+                <span className="pb-0.5 text-sm text-muted line-through">
+                  {formattedOldPrice}
+                </span>
+              )}
+            </div>
+            <p className="mt-1 text-xs font-medium text-primary-hover">
+              Você economiza {safeDiscount}% nesta peça
+            </p>
+          </div>
+        ) : (
+          <div className="mt-2 mb-10 flex items-end gap-3">
+            <span className="text-2xl font-bold tracking-tight text-primary">
+              {formattedPrice}
             </span>
-          )}
-        </div>
-
-        {/* Economia */}
-        {safeDiscount > 0 && (
-          <p className="mt-1 text-xs font-medium text-primary-hover">
-            Você economiza {safeDiscount}% nesta peça
-          </p>
+          </div>
         )}
 
         {/* WhatsApp */}
