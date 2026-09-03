@@ -12,6 +12,12 @@ const Footer = () => {
         <p className="text-xs text-muted">
           © 2026 Madame Bakana. Todos os direitos reservados.
         </p>
+        <p className="text-xs text-muted">
+          Developed by{" "}
+          <strong>
+            <a href="https://www.instagram.com/vascore.code/">Vascore.</a>
+          </strong>
+        </p>
       </div>
     </footer>
   );

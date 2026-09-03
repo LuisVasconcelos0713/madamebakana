@@ -101,6 +101,22 @@ const ProductEditMode = ({ product, onCancel }) => {
           ></input>
         </div>
 
+        <div className="space-y-2">
+          <label htmlFor="slug" className="text-sm font-semibold text-text">
+            Slug
+          </label>
+
+          <input
+            type="text"
+            id="slug"
+            name={"slug"}
+            placeholder={product.name}
+            className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-text outline-none transition placeholder:text-gray-400 focus:border-primary focus:ring-2 focus:ring-primary/10"
+            defaultValue={product.name}
+            required
+          ></input>
+        </div>
+
         <div className="flex gap-3 border-t border-gray-200 pt-4">
           <button
             type="submit"

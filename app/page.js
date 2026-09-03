@@ -168,7 +168,7 @@ const page = async () => {
                 <img
                   src="https://images.unsplash.com/photo-1483985988355-763728e1935b"
                   alt="Moda feminina"
-                  className="h-80 w-full object-cover transition duration-500 hover:scale-105"
+                  className="h-88 w-full object-cover transition duration-500 hover:scale-105"
                 />
               </div>
               <div className="mt-8 overflow-hidden rounded-3xl shadow-lg">
