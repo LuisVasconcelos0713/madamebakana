@@ -200,37 +200,20 @@ const page = async () => {
           </div>
 
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-            <div className="overflow-hidden rounded-3xl">
-              <img
-                src={products[0].image}
-                alt="Moda feminina"
-                className="h-64 w-full object-cover transition duration-500 hover:scale-105 md:h-80"
-              />
-            </div>
-
-            <div className="overflow-hidden rounded-3xl md:mt-10">
-              <img
-                src={products[5].image}
-                alt="Look feminino"
-                className="h-64 w-full object-cover transition duration-500 hover:scale-105 md:h-80"
-              />
-            </div>
-
-            <div className="overflow-hidden rounded-3xl">
-              <img
-                src={products[4].image}
-                alt="Coleção feminina"
-                className="h-64 w-full object-cover transition duration-500 hover:scale-105 md:h-80"
-              />
-            </div>
-
-            <div className="overflow-hidden rounded-3xl md:mt-10">
-              <img
-                src={products[2].image}
-                alt="Roupas femininas"
-                className="h-64 w-full object-cover transition duration-500 hover:scale-105 md:h-80"
-              />
-            </div>
+            {products.slice(0, 4).map((product, index) => (
+              <div
+                key={product.id}
+                className={`overflow-hidden rounded-3xl ${
+                  index % 2 !== 0 ? "md:mt-10" : ""
+                }`}
+              >
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="h-64 w-full object-cover transition duration-500 hover:scale-105 md:h-80"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>

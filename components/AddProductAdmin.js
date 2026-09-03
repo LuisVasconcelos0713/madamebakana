@@ -56,6 +56,17 @@ const AddProductAdmin = () => {
             className="rounded-xl border border-[#D9CCC2] bg-white px-4 py-3 text-sm text-text outline-none transition placeholder:text-gray-400 focus:border-primary focus:ring-2 focus:ring-primary/10"
           />
         </div>
+
+        <div className="flex flex-col gap-2 sm:col-span-2">
+          <label className="text-sm font-semibold text-text">Slug</label>
+
+          <input
+            type="text"
+            name="slug"
+            placeholder="Nome do produto na pesquisa"
+            className="rounded-xl border border-[#D9CCC2] bg-white px-4 py-3 text-sm text-text outline-none transition placeholder:text-gray-400 focus:border-primary focus:ring-2 focus:ring-primary/10"
+          />
+        </div>
       </div>
 
       <button

@@ -40,12 +40,7 @@ export default function ProductCarousel({ products }) {
       >
         {products.map((product) => (
           <SwiperSlide key={product.id} className="h-auto">
-            <ProductCard
-              name={product.name}
-              price={product.price}
-              image={product.image}
-              discount={product.discount}
-            />
+            <ProductCard product={product} />
           </SwiperSlide>
         ))}
       </Swiper>

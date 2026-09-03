@@ -7,6 +7,7 @@ export async function sendProduct(formData) {
   const productPrice = formData.get("price");
   const productDiscount = formData.get("discount");
   const productImageLink = formData.get("imageLink");
+  const productSlug = formData.get("slug").trim().replace(/\s+/g, "-");
 
   const price = Number(productPrice);
   const discount = Number(productDiscount);
@@ -17,11 +18,13 @@ export async function sendProduct(formData) {
     const product = await prisma.product.create({
       data: {
         name: productName,
+        slug: productSlug,
         price: Number(productPrice),
         discount: productDiscount ? Number(productDiscount) : null,
         image: productImageLink,
       },
     });
+    console.log(product);
   }
 
   revalidatePath("/");

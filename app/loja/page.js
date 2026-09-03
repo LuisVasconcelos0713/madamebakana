@@ -128,14 +128,7 @@ const LojaPage = async () => {
           ) : (
             <div className="grid grid-cols-1 gap-x-6 gap-y-14 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {products.map((product) => (
-                <ProductCard
-                  key={product.id}
-                  name={product.name}
-                  price={product.price}
-                  discount={product.discount}
-                  image={product.image}
-                  id={product.id}
-                />
+                <ProductCard key={product.id} product={product} />
               ))}
             </div>
           )}
