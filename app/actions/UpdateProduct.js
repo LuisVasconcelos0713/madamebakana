@@ -29,4 +29,6 @@ export async function UpdateProduct(formData) {
   });
 
   revalidatePath("/admin");
+  revalidatePath("/loja");
+  revalidatePath("/");
 }

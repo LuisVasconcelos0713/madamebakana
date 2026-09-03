@@ -9,4 +9,6 @@ export async function DeleteProduct(id) {
   });
 
   revalidatePath("/admin");
+  revalidatePath("/loja");
+  revalidatePath("/");
 }
