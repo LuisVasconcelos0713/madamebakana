@@ -7,7 +7,14 @@ export async function sendProduct(formData) {
   const productPrice = formData.get("price");
   const productDiscount = formData.get("discount");
   const productImageLink = formData.get("imageLink");
-  const productSlug = formData.get("slug").trim().replace(/\s+/g, "-");
+  const productSlug = formData
+    .get("slug")
+    .trim()
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
 
   const price = Number(productPrice);
   const discount = Number(productDiscount);

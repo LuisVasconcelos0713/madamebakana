@@ -4,7 +4,7 @@ import { useState } from "react";
 import ProductEditMode from "./ProductEditMode";
 import { DeleteProduct } from "../app/actions/DeleteProduct";
 
-const ProductCardAdmin = ({ name, price, discount, image, id }) => {
+const ProductCardAdmin = ({ name, price, discount, image, id, slug }) => {
   const [editMode, setEditMode] = useState(false);
   const [deleteMode, setDeleteMode] = useState(false);
 
@@ -37,6 +37,7 @@ const ProductCardAdmin = ({ name, price, discount, image, id }) => {
             price: safePrice,
             discount: safeDiscount,
             image,
+            slug,
           }}
           onCancel={() => setEditMode(false)}
         />

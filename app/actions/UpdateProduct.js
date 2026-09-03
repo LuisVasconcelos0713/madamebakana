@@ -8,7 +8,14 @@ export async function UpdateProduct(formData) {
   const price = formData.get("price");
   const discount = formData.get("discount");
   const imageLink = formData.get("image");
-  const productSlug = formData.get("slug").trim().replace(/\s+/g, "-");
+  const productSlug = formData
+    .get("slug")
+    .trim()
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
 
   const product = await prisma.product.update({
     where: { id },

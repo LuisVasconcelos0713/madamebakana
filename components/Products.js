@@ -17,6 +17,7 @@ const Products = async () => {
             price={product.price}
             discount={product.discount}
             image={product.image}
+            slug={product.slug}
           />
         ))}
       </div>
