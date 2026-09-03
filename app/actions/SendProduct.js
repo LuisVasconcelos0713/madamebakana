@@ -35,4 +35,5 @@ export async function sendProduct(formData) {
   }
 
   revalidatePath("/");
+  revalidatePath("/loja");
 }
