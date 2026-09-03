@@ -110,9 +110,9 @@ const ProductEditMode = ({ product, onCancel }) => {
             type="text"
             id="slug"
             name={"slug"}
-            placeholder={product.name}
+            placeholder={product.slug}
             className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-text outline-none transition placeholder:text-gray-400 focus:border-primary focus:ring-2 focus:ring-primary/10"
-            defaultValue={product.name}
+            defaultValue={product.slug}
             required
           ></input>
         </div>
